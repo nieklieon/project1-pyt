@@ -1,1 +1,66 @@
+user_name = input("What is your name? ")
 
+#Welcome user
+print(f"Awesome that you want to try and help {user_name}! \
+The mutated animals need to eat our human babies to survive \
+lets get them into safety before the mutants get to them.") 
+
+#Ask what to do
+while True:
+    action = input("What should we do? Search for a location to get the babies to (l), \
+    gather babies (g) or get a key for the location (k)? ")
+    if action == "l":
+        call = int(input("Call the major to ask for a location. Get the phone number by converting \
+        'crisis' to numbers by using a=1, b=2 ... "))
+        while call != 318919919:
+            print("Oops, that is not right, please try again")
+            call = int(input("Call the major to ask for a location. Get the phone number by converting \
+                             'crisis' to numbers by using a=1, b=2 ... "))
+            continue
+        print("318919919 is correct. The major suggests to put the babies in the theater.")
+    elif action == "g":
+        choice = input("Should we hack baby monitors? (b), use a megaphone (m) or put up a flyer (f) \
+                       to gather the babies? ")     
+        while choice != "b":    
+            if choice == "m":
+                print("That is too loud, please choose an option that does not alert the mutants")
+                choice = input("Should we hack baby monitors? (b), use a megaphone (m) or put up a flyer (f) \
+                               to gather the babies? ")
+                continue
+            elif choice == "f":
+                print("This would be too slow. We are in a crisis situation. Notify the parents fast!")
+                choice = input("Should we hack baby monitors? (b), use a megaphone (m) or put up a flyer (f) \
+                               to gather the babies? ")
+                continue
+            else:
+                print("Sorry, I did not understand you, please try again")
+                choice = input("Should we hack baby monitors? (b), use a megaphone (m) or put up a flyer (f) \
+                               to gather the babies? ")
+                continue
+        prime = int(input("Use the first four prime numbers in order from highest to lowest \
+                          to hack the monitors "))
+        while prime != 7532:
+            print("Oops, that is not right, please try again")
+        print("Congratulations, 7532 was right. The parents are notified to keep their babies safe")  
+    if action == "k":
+        key = int(input("The key is stored behind the gate of the university. Use the year in which the University \
+                        of Utrecht was opened, to open the gate. "))
+        while key != 1636:
+            print("Oops, that is not correct, please try again")
+            key = int(input("The key is stored behind the gate of the university. Use the year in which the University \
+                            of Utrecht was opened, to open the gate. "))
+            continue
+        print("1636 is correct! Get the key and get our babies safe!")            
+
+    #Ask if all three parts are gathered 
+    done = (input("Do you have all you need to safe the babies? (the location, the key and the babies) (y/n) "))
+    if done == "y":
+        print("Thank you so much for keeping our babies safe!")
+        break
+    elif done == "n": #loop back back to start
+        keep_playing = input("Do you want to keep playing? (y/n) ")
+        if keep_playing == "n":
+            print("Thank you for helping to safe our babies.")
+            break
+    
+     
