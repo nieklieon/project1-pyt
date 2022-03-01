@@ -1,74 +1,90 @@
+#start count
+
+end_count = 0
+
+
 #world Tessa
 
 def world_tessa():
 
 #Welcome user
-    print(f"Awesome that you want to try and help {user_name}! \
+    print(f"""
+Awesome that you want to try and help {user_name}! \
 The mutated animals need to eat our human babies to survive \
-lets get them into safety before the mutants get to them.") 
+lets get them into safety before the mutants get to them.""") 
     
 #Ask what to do
-    while True:
+    counter = set()
+    while len(counter) != 3:
         action = input("What should we do? Search for a location to get the babies to (l), \
 gather babies (g) or get a key for the location (k)? ")
         if action == "l": #player chose to search for location
             call = input("Call the major to ask for a location. Get the phone number by converting \
 'crisis' to numbers by using a=1, b=2 ... ")
             while call != "318919919":
-                print("Oops, that is not right, please try again")
+                print("""
+Oops, that is not right, please try again""")
                 call = input("Call the major to ask for a location. Get the phone number by converting \
 'crisis' to numbers by using a=1, b=2 ... ")
                 continue
-            print("318919919 is correct. The major suggests to put the babies in the theater.")
+            print("""
+318919919 is correct. The major suggests to put the babies in the theater.""")
+            counter.add("l")
+            
         elif action == "g": #player chose to gather the babies
             choice = input("Should we hack baby monitors? (b), use a megaphone (m) or put up a flyer (f) \
 to gather the babies? ")     
             while choice != "b": #player chose not to hack the baby monitors   
                 if choice == "m": #player chose to use a megaphone
-                    print("That is too loud, please choose an option that does not alert the mutants")
+                    print("""
+That is too loud, please choose an option that does not alert the mutants""")
                     choice = input("Should we hack baby monitors? (b), use a megaphone (m) or put up a flyer (f) \
 to gather the babies? ")
                     continue
                 elif choice == "f": #player chose to put up a flyer
-                    print("This would be too slow. We are in a crisis situation. Notify the parents fast!")
+                    print("""
+This would be too slow. We are in a crisis situation. Notify the parents fast!""")
                     choice = input("Should we hack baby monitors? (b), use a megaphone (m) or put up a flyer (f) \
 to gather the babies? ")
                     continue
                 else: #player entered something invalid
-                    print("Sorry, I did not understand you, please try again")
+                    print("""
+Sorry, I did not understand you, please try again""")
                     choice = input("Should we hack baby monitors? (b), use a megaphone (m) or put up a flyer (f) \
 to gather the babies? ")
                     continue
             prime = input("Use the first four prime numbers in order from highest to lowest \
 to hack the monitors ") #player chose to hack the baby monitors
             while prime != "7532":
-                print("Oops, that is not right, please try again")
-            print("Congratulations, 7532 was right. The parents are notified to keep their babies safe")  
+                print("""
+Oops, that is not right, please try again""")
+            print("""
+Congratulations, 7532 was right. The parents are notified to keep their babies safe""")  
+            counter.add("g")
+
         elif action == "k": #player chose to get the key
             key = input("The key is stored behind the gate of the university. Use the year in which the University \
 of Utrecht was opened, to open the gate. ")
             while key != "1636":
-                print("Oops, that is not correct, please try again")
+                print("""
+Oops, that is not correct, please try again""")
                 key = input("The key is stored behind the gate of the university. Use the year in which the University \
 of Utrecht was opened, to open the gate. ") 
                 continue
-            print("1636 is correct! Get the key and get our babies safe!") 
+            print("""
+1636 is correct! Get the key and get our babies safe!""") 
+            counter.add("k")
+    
         else:
-            print("Sorry, I do not understand you. Please try again.")
+            print("""
+Sorry, I do not understand you. Please try again.""")
             continue
-#Ask if all three parts are gathered 
-        done = input("Do you have all you need to safe the babies? (the location, the key and the babies) (y/n)")
-        if done == "y":
-            print("Thank you so much for keeping our babies safe!")
-            break
-        elif done == "n": #loop back back to start
-            keep_playing = input("Do you want to keep playing? (y/n) ")
-            if keep_playing == "n":
-                print("Thank you for helping, hope to see you again.")
-                return
-                
+        
+    print("""
+You completed this world.""")
     global end_count
     end_count += 1
+
 
 
 
@@ -264,7 +280,9 @@ Please try to remember the numbers! Example to how it should be entered: 4-5,098
 Congratulations, you completed the world of Boy.""")
     global end_count
     end_count += 1
-    
+  
+  
+  
 
 # World Niek
 
@@ -600,7 +618,6 @@ def roberto_world():
     else:
         print("You did not complete this world!")
           
-
 #main menu
 
 user_name = input("What is your name? ")
@@ -610,6 +627,7 @@ Your job is to find the cure to the disease causing this and save the world! \
 You can do this by completing all the levels and collecting 4 tokens. \
 Well, let's not wait! Let's start!")
 
+end_count = 0
 while end_count < 4:
    print(f"You obtained {end_count} tokens.")
    print("""These people need your help:
@@ -625,12 +643,11 @@ Niek (4)""")
    elif world == "2" or world == "boy" or world == "Boy":
        world_boy()
    elif world == "3" or world == "roberto" or world == "Roberto":
-       print("Place function here.")
+       roberto_world()
    elif world == "4" or world == "niek" or world == "Niek":
-      print("Place function here.")
+       world_Niek()
    else:
        print("Please enter your choice: Tessa (1), Boy (2), Roberto (3), Niek (4).")
-
-print("Thanks for saving the planet and for playing!")
-
-
+else: 
+    print(f"You obtained {end_count} tokens.")
+    print("Thanks for saving the planet and for playing!")
