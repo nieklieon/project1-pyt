@@ -57,16 +57,18 @@ of Utrecht was opened, to open the gate. ")
             print("Sorry, I do not understand you. Please try again.")
             continue
 #Ask if all three parts are gathered 
-        done = input("Do you have all you need to safe the babies? (the location, the key and the babies) (y/n) ")
+        done = input("Do you have all you need to safe the babies? (the location, the key and the babies) (y/n)")
         if done == "y":
             print("Thank you so much for keeping our babies safe!")
             break
         elif done == "n": #loop back back to start
             keep_playing = input("Do you want to keep playing? (y/n) ")
             if keep_playing == "n":
-                print("Thank you for helping to safe our babies.")
-                break
-
+                print("Thank you for helping, hope to see you again.")
+                return
+                
+    global end_count
+    end_count += 1
 
 
 
@@ -232,6 +234,8 @@ drain (4)""")
             continue
 
     print("Congratulations, you completed the world of Boy.")
+    global end_count
+    end_count += 1
 
 
 
@@ -246,16 +250,23 @@ user_name = input("What is your name? ")
 print(f"Welcome {user_name}, INTRO")
 
 end_count = 0
-    while end_count < 4:
-         print(f"You obtained {end_count} tokens.")
-         world = input("What world do you want to enter? ")
-         if world == "1" or world == "tessa":
-             world_tessa()
-         elif world == "2" or world == "boy":
-             world_boy()
-         elif world == "3" or world == "roberto":
-             world_roberto()
-         elif world == "4" or world == "niek":
-             world_niek()
-         else:
-            print("Please enter your choice: tessa(1), boy(2), roberto(3), niek(4).")
+while end_count < 4:
+   print(f"You obtained {end_count} tokens.")
+   print("""These people need your help:
+
+Tessa (1)
+Boy (2)
+Roberto (3)
+Niek (4)""")
+
+   world = input("What world do you want to enter? ")
+   if world == "1" or world == "tessa" or world == "Tessa":
+       world_tessa()
+   elif world == "2" or world == "boy" or world == "Boy":
+       world_boy()
+   elif world == "3" or world == "roberto" or world == "Roberto":
+       print("Place function here.")
+   elif world == "4" or world == "niek" or world == "Niek":
+      print("Place function here.")
+   else:
+       print("Please enter your choice: Tessa (1), Boy (2), Roberto (3), Niek (4).")
