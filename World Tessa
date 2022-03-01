@@ -44,14 +44,14 @@ while True:
         print("Congratulations, 7532 was right. The parents are notified to keep their babies safe")  
     if action == "k":
         key = input("The key is stored behind the gate of the university. Use the year in which the University \
-                    of Utrecht was opened, to open the gate. ")
+of Utrecht was opened, to open the gate. ")
         while key != "1636":
             print("Oops, that is not correct, please try again")
             key = input("The key is stored behind the gate of the university. Use the year in which the University \
-                        of Utrecht was opened, to open the gate. ")
+of Utrecht was opened, to open the gate. ")
             continue
         print("1636 is correct! Get the key and get our babies safe!")            
-
+  
     #Ask if all three parts are gathered 
     done = input("Do you have all you need to safe the babies? (the location, the key and the babies) (y/n) ")
     if done == "y":
