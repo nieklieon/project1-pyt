@@ -1,8 +1,11 @@
+user_name = input("What is your name? ")
+
+print(f"Welcome {user_name}, INTRO")
+
 end_count = 0
     while end_count < 4:
          print(f"You obtained {end_count} tokens.")
-         
-world = input("What world do you want to enter? ")
+         world = input("What world do you want to enter? ")
          if world == "1" or choice_level2 == "tessa":
              world_tessa()
              counter += 1
