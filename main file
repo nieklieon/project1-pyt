@@ -425,40 +425,7 @@ replicate it and distribute it over planet Earth""")
         global end_count
         end_count += 1   
     
-                
-
-#main menu
-
-user_name = input("What is your name? ")
-
-print(f"Welcome {user_name}, you are an adventurer on a planet plagued by mutated animals. \
-Your job is to find the cure to the disease causing this and save the world! \
-You can do this by completing all the levels and collecting 4 tokens. \
-Well, let's not wait! Let's start!")
-
-while end_count < 4:
-   print(f"You obtained {end_count} tokens.")
-   print("""These people need your help:
-
-Tessa (1)
-Boy (2)
-Roberto (3)
-Niek (4)""")
-
-   world = input("What world do you want to enter? ")
-   if world == "1" or world == "tessa" or world == "Tessa":
-       world_tessa()
-   elif world == "2" or world == "boy" or world == "Boy":
-       world_boy()
-   elif world == "3" or world == "roberto" or world == "Roberto":
-       print("Place function here.")
-   elif world == "4" or world == "niek" or world == "Niek":
-      print("Place function here.")
-   else:
-       print("Please enter your choice: Tessa (1), Boy (2), Roberto (3), Niek (4).")
-       
-       
-       
+    
 #------------------------------------------------------------------------------------------------------------       
 # Roberto_world
 
@@ -632,11 +599,38 @@ def roberto_world():
         print("\nCongratulations you have completed this world and found all three digit numbers of the safe (9,5,7)!")
     else:
         print("You did not complete this world!")
-        
-roberto_world()
           
 
+#main menu
 
+user_name = input("What is your name? ")
 
+print(f"Welcome {user_name}, you are an adventurer on a planet plagued by mutated animals. \
+Your job is to find the cure to the disease causing this and save the world! \
+You can do this by completing all the levels and collecting 4 tokens. \
+Well, let's not wait! Let's start!")
+
+while end_count < 4:
+   print(f"You obtained {end_count} tokens.")
+   print("""These people need your help:
+
+Tessa (1)
+Boy (2)
+Roberto (3)
+Niek (4)""")
+
+   world = input("What world do you want to enter? ")
+   if world == "1" or world == "tessa" or world == "Tessa":
+       world_tessa()
+   elif world == "2" or world == "boy" or world == "Boy":
+       world_boy()
+   elif world == "3" or world == "roberto" or world == "Roberto":
+       print("Place function here.")
+   elif world == "4" or world == "niek" or world == "Niek":
+      print("Place function here.")
+   else:
+       print("Please enter your choice: Tessa (1), Boy (2), Roberto (3), Niek (4).")
+
+print("Thanks for saving the planet and for playing!")
 
 
