@@ -1,6 +1,6 @@
 #start count
 
-end_count = 0
+end_count = set()
 
 
 #world Tessa
@@ -83,7 +83,13 @@ Sorry, I do not understand you. Please try again.""")
     print("""
 You completed this world.""")
     global end_count
-    end_count += 1
+    end_count.add("t")
+
+
+
+
+
+
 
 
 
@@ -279,7 +285,17 @@ Please try to remember the numbers! Example to how it should be entered: 4-5,098
           
 Congratulations, you completed the world of Boy.""")
     global end_count
-    end_count += 1
+    end_count.add("b")
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
@@ -289,23 +305,19 @@ Congratulations, you completed the world of Boy.""")
 def world_Niek():
     items = set()
     spill = False
-    global end_count
-    if end_count < 4:
-        print("I'm sorry you can't play this level yet. Complete the other levels to gain acces to the bank.")
-    else:
     
 # First level 
     
-        print("You walk up to the bank, and stop to gaze upon its enormity. The building towers above you and the walls and \
+    print("You walk up to the bank, and stop to gaze upon its enormity. The building towers above you and the walls and \
 reinforced door look impenetrable. You will have to come up with a way to get inside.")
     
-        print("""
+    print("""
 Pretend you're a rich customer (1)
 Just rob the damn place (2)""")
         
     # Choosing between aggressive and sneaky
     
-        while True:
+    while True:
             desguise = input('What will you do? \n\n')
             if desguise == '2':
                 print("""
@@ -318,7 +330,7 @@ lot of jailtime ahead of you. Try again!""")
             
     # Entering the bank
             
-        print("""
+    print("""
 You walk through the doors of the bank and talk to the assistent behind the counter. \
 "Good day", you say, "I am here to inspect my belongings in the vault". \
 The bank assistent asks you for identification. You give her a forged ID card and she examines it.
@@ -328,7 +340,7 @@ These are the ways you can go:""")
     
     # Inside the bank, searching for the keycard and desguise
         
-        while True:
+    while True:
             
              # check if all items are here1
             if items == {1,2,3}:
@@ -435,15 +447,29 @@ What name do you give yourself as a janitor? \n\n""")
         
     # Outro
         
-        print("""
+    print("""
 The big vault door slowly creaks open and a golden light shines through the opening. \
 In the middle of the vault you see a single stand with a vial on it: THE CURE! \
 You take the vial and take it to the laberatory of John. There you are able to \
 replicate it and distribute it over planet Earth""")
-        global end_count
-        end_count += 1   
     
+    global end_count
+    end_count.add("n")
+  
     
+
+
+
+
+
+
+
+
+
+
+
+
+
 #------------------------------------------------------------------------------------------------------------       
 # Roberto_world
 
@@ -562,11 +588,11 @@ def level3_question(count):
 
 ####MAIN GAME
 
-def roberto_world():
+def roberto_world(user_name):
     #count is equal to the level a person has achieved
     count = 0
     #MAIN INTRO
-    username = input("enter your name: ")
+    username = user_name
     print(f"Welcome {username}, you are in the world of Roberto!\
           \nCurrently, there are mutated beasts that are endangering the world!\
           \nThe beasts have already killed a lot of people and caused damage.\
@@ -615,22 +641,35 @@ def roberto_world():
     
     if count == 3:
         print("\nCongratulations you have completed this world and found all three digit numbers of the safe (9,5,7)!")
+        global end_count
+        end_count.add("r")
     else:
         print("You did not complete this world!")
+
+
+
+
+
+
+
+
+
           
 #main menu
 
 user_name = input("What is your name? ")
 
-print(f"Welcome {user_name}, you are an adventurer on a planet plagued by mutated animals. \
+print(f"""
+Welcome {user_name}, you are an adventurer on a planet plagued by mutated animals. \
 Your job is to find the cure to the disease causing this and save the world! \
 You can do this by completing all the levels and collecting 4 tokens. \
-Well, let's not wait! Let's start!")
+Well, let's not wait! Let's start!""")
 
-end_count = 0
-while end_count < 4:
-   print(f"You obtained {end_count} tokens.")
-   print("""These people need your help:
+while len(end_count) != 4:
+   print(f"""
+You still need to help someone.""")
+   print("""
+These people need your help:
 
 Tessa (1)
 Boy (2)
@@ -643,11 +682,18 @@ Niek (4)""")
    elif world == "2" or world == "boy" or world == "Boy":
        world_boy()
    elif world == "3" or world == "roberto" or world == "Roberto":
-       roberto_world()
+       roberto_world(user_name)
    elif world == "4" or world == "niek" or world == "Niek":
-       world_Niek()
+       if len(end_count) != 3:
+           print("""
+I'm sorry you can't play this level yet. Complete the other levels to gain acces to the bank.""")
+       else:
+           world_Niek()
    else:
-       print("Please enter your choice: Tessa (1), Boy (2), Roberto (3), Niek (4).")
+       print("""
+Please enter your choice: Tessa (1), Boy (2), Roberto (3), Niek (4).""")
 else: 
-    print(f"You obtained {end_count} tokens.")
-    print("Thanks for saving the planet and for playing!")
+    print(f"""
+You once again helped everybody in need!""")
+    print("""
+Thanks for saving the planet and for playing!""")
