@@ -1,1 +1,15 @@
-
+end_count = 0
+    while end_count < 4:
+         print(f"You obtained {end_count} tokens.")
+         
+world = input("What world do you want to enter? ")
+         if world == "1" or choice_level2 == "tessa":
+             counter += 1
+         elif world == "2" or choice_level2 == "boy":
+             counter += 1
+         elif world == "3" or choice_level2 == "roberto":
+             counter += 1
+         elif world == "4" or choice_level2 == "niek":
+             counter += 1
+         else:
+            print("Please enter your choice: tessa(1), boy(2), roberto(3), niek(4).")
