@@ -4,12 +4,16 @@ end_count = 0
          
 world = input("What world do you want to enter? ")
          if world == "1" or choice_level2 == "tessa":
+             world_tessa()
              counter += 1
          elif world == "2" or choice_level2 == "boy":
+             world_boy()
              counter += 1
          elif world == "3" or choice_level2 == "roberto":
+             world_roberto()
              counter += 1
          elif world == "4" or choice_level2 == "niek":
+             world_niek()
              counter += 1
          else:
             print("Please enter your choice: tessa(1), boy(2), roberto(3), niek(4).")
