@@ -431,9 +431,11 @@ replicate it and distribute it over planet Earth""")
 
 user_name = input("What is your name? ")
 
-print(f"Welcome {user_name}, INTRO")
+print(f"Welcome {user_name}, you are an adventurer on a planet plagued by mutated animals. \
+Your job is to find the cure to the disease causing this and save the world! \
+You can do this by completing all the levels and collecting 4 tokens. \
+Well, let's not wait! Let's start!")
 
-end_count = 0
 while end_count < 4:
    print(f"You obtained {end_count} tokens.")
    print("""These people need your help:
