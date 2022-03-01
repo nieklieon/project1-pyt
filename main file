@@ -264,162 +264,167 @@ Please try to remember the numbers! Example to how it should be entered: 4-5,098
 Congratulations, you completed the world of Boy.""")
     global end_count
     end_count += 1
+    
 
 # World Niek
 
 def world_Niek():
     items = set()
     spill = False
-    # if count < 4:
-        # print("I'm sorry you can't play this level yet. Complete the other levels to gain acces to the bank.")
-    # else:
+    global end_count
+    if end_count < 4:
+        print("I'm sorry you can't play this level yet. Complete the other levels to gain acces to the bank.")
+    else:
     
 # First level 
     
-    print("You walk up to the bank, and stop to gaze upon its enormity. The building towers above you and the walls and \
+        print("You walk up to the bank, and stop to gaze upon its enormity. The building towers above you and the walls and \
 reinforced door look impenetrable. You will have to come up with a way to get inside.")
-
-    print("""
+    
+        print("""
 Pretend you're a rich customer (1)
 Just rob the damn place (2)""")
+        
+    # Choosing between aggressive and sneaky
     
-# Choosing between aggressive and sneaky
-
-    while True:
-        desguise = input('What will you do? \n\n')
-        if desguise == '2':
-            print("""
+        while True:
+            desguise = input('What will you do? \n\n')
+            if desguise == '2':
+                print("""
 You run inside, gun drawn, and yell at the banktellers to let you in. But before you can do anything you \
 get jumped by 5 guards. They take your gun and handcuff you. You are being taken to the police station with a \
 lot of jailtime ahead of you. Try again!""")
-            continue
-        else:
-            break
-        
-# Entering the bank
-        
-    print("""
+                continue
+            else:
+                break
+            
+    # Entering the bank
+            
+        print("""
 You walk through the doors of the bank and talk to the assistent behind the counter. \
 "Good day", you say, "I am here to inspect my belongings in the vault". \
 The bank assistent asks you for identification. You give her a forged ID card and she examines it.
 She looks at you with a suspicious look but lets you through. You're inside! \
 To get to the vault you will need access to the top floor with a keycard and a desguise. \
 These are the ways you can go:""")
-
-# Inside the bank, searching for the keycard and desguise
     
-    while True:
+    # Inside the bank, searching for the keycard and desguise
         
-         # check if all items are here1
-        if items == {1,2,3}:
-            print("""
+        while True:
+            
+             # check if all items are here1
+            if items == {1,2,3}:
+                print("""
 Well done! You have succesfully entered the secured elevator to the floor where the vault it. \
 You soar upwards 80 floors to the top of the building. There the elevator doors open and you see the vault... \
 You spot a keypad with 9 numbers.""")
-            print("""
-            1   2   3
-            4   5   6
-            7   8   9
-                0""")
-                
-            # Ask to input code
-            while True:
-                num_input = int(input("What number do you enter? \n\n"))
-                if num_input == 123:
-                    break
-                else:
-                    print("'BEEP BEEP'. CODE INCORRECT. PLEASY TRY AGAIN.")
-            break
-        
-        
-# If items are not yet found, ask heading
-
-        heading = input("""
+                print("""
+                1   2   3
+                4   5   6
+                7   8   9
+                    0""")
+                    
+                # Ask to input code
+                while True:
+                    num_input = int(input("What number do you enter? \n\n"))
+                    if num_input == 123:
+                        break
+                    else:
+                        print("'BEEP BEEP'. CODE INCORRECT. PLEASY TRY AGAIN.")
+                break
+            
+            
+    # If items are not yet found, ask heading
+    
+            heading = input("""
 Go to the vault (1)
 Go the office of the CEO (2)
 Go the janitor's closet (3)
-                   
+                       
 Where will you go? \n\n""")
-        
-# To the vault
-
-        if heading == '1':
-        
-            # when you don't have enough id items
             
-            if items != {1,2}:
-                print("""
+    # To the vault
+    
+            if heading == '1':
+            
+                # when you don't have enough id items
+                
+                if items != {1,2}:
+                    print("""
 You walk up to the elevator which leads to the vault but cannot show the proper ID when \
 asked by the mechanical voice coming from the speakers. Please return when you have the proper ID.""")
-                continue
-        
-            # when you have enough id items
+                    continue
             
-            else:
-                print(f"You step into the elevator. A mechanical voice sounds, saying: \
+                # when you have enough id items
+                
+                else:
+                    print(f"You step into the elevator. A mechanical voice sounds, saying: \
 I am scanning you, you seem to be janitor {jan_name}. \
 Please scan your keycard")
-                items.add(3)
+                    items.add(3)
+                    
+    # CEO's office
+    
+            elif heading == "2":
                 
-# CEO's office
-
-        elif heading == "2":
-            
-            print("""
+                print("""
 You walk to office belonging to the CEO, you need to get his keycard. \
 You knock on the door and no one reacts. You slowly open the door and find the office empty. \
 You know the CEO keeps a spare card somewhere in his office. You see a few objects in the office:
-""")
-
-            # Choosing object to examine
-            
-            while True:
-                    chosen_obj = input("""
+    """)
+    
+                # Choosing object to examine
+                
+                while True:
+                        chosen_obj = input("""
 A photo of his brother (1)
 His personal safe (2)
 A cup of coffee standing on a pile of documents (3)
 Drawer in his desk (4)
-                                       
+                                           
 Where do you look? \n\n""") 
-
-                    if chosen_obj == '3':
-                        print("\nThe keycard doesn't seem to be hidden here. \
+    
+                        if chosen_obj == '3':
+                            print("\nThe keycard doesn't seem to be hidden here. \
 In the process of inspecting the pile of documents you tip over the cup of coffee \
 and it breaks on the floor, spilling coffee everywhere.")
-                        spill = True
-                        continue
-                    elif chosen_obj == '1':
-                        print("\nThe photograph seems to be a gift from the brother of the CEO. \
+                            spill = True
+                            continue
+                        elif chosen_obj == '1':
+                            print("\nThe photograph seems to be a gift from the brother of the CEO. \
 Behind the frame you find the spare keycard. You grab it and leave the office.")
-                        items.add(1)
-                        break
-                    else:
-                        print("\nThe keycard doesn't seem to be hidden here.")
-                        
-# Janitors closet
-
-        elif heading == '3':
-            while True:
-                if spill == False:
-                    print("""
+                            items.add(1)
+                            break
+                        else:
+                            print("\nThe keycard doesn't seem to be hidden here.")
+                            
+    # Janitors closet
+    
+            elif heading == '3':
+                while True:
+                    if spill == False:
+                        print("""
 The janitor is sitting in his chair and doesn't seem likely to move in the near future. \
 Find a way to lure him away""")
-                    break
-                else:
-                    items.add(2)
-                    jan_name = input("""
+                        break
+                    else:
+                        items.add(2)
+                        jan_name = input("""
 The janitor has been called away to clean the spilled coffee in the CEO's office. \
 You quickly grab a janitor outfit from the closet and desguise yourself. \
 What name do you give yourself as a janitor? \n\n""")
-                    break
-    
-# Outro
-    
-    print("""
+                        break
+        
+    # Outro
+        
+        print("""
 The big vault door slowly creaks open and a golden light shines through the opening. \
 In the middle of the vault you see a single stand with a vial on it: THE CURE! \
 You take the vial and take it to the laberatory of John. There you are able to \
 replicate it and distribute it over planet Earth""")
+        global end_count
+        end_count += 1   
+    
                 
 
 #main menu
