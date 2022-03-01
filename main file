@@ -80,40 +80,47 @@ def level1_1():
         answer_level1_1 = input("It seems sample 2-1 is stuck to something inside the pool,\
  would you like to inspect or leave the sample? (i/l) ")
         if answer_level1_1 == "i" or answer_level1_1 == "inspect":
-            print("It seems like seaweed, you reach out to cut it loose,\
- but suddenly you're pulled down into the deep water...")
+            print("""
+It seems like seaweed, you reach out to cut it loose,\
+ but suddenly you're pulled down into the deep water...""")
             break
         elif answer_level1_1 == "l" or answer_level1_1 == "leave":
-            print("You are riding your dirtbike back to the labratory, enjoying the vast landscape,\
- until...")
+            print("""
+You are riding your dirtbike back to the labratory, enjoying the vast landscape,\
+ until...""")
             break
         else:
-            print("Please only tell me, inspect(i) or leave(l).")
+            print("""
+Please only tell me, inspect(i) or leave(l).""")
             continue
  
 def world_boy():
     
     #intro
-    print(f"Hello there, my name is Dr Boweel and you must be {user_name}.\
+    print(f"""
+Hello there, my name is Dr Boweel and you must be {user_name}.\
  I’ve heard a lot of good things; seems you can put on quite a show.\
  In my old days I was just like you, young, full of strength and determination… \
 But let’s come to business, I’ve been sent to this planet on the first reconnaissance flight,\
  as geologist, and stayed here ever since. I am currently conducting research on this volcanic plateau,\
  because it might have the potential of providing us huge amounts of geothermal energy.\
- We desperately need energy for our growing population, at least, the ones that survived.")
+ We desperately need energy for our growing population, at least, the ones that survived.""")
     user_name1 = input("Sorry for my rather long talk, I don’t talk to people often... Who are you again? ")
     while True:
         answer_intro = input(f"Right, {user_name1}, I could use some help, a young spirit like you, I do tend to forget\
  quite some information nowadays, I need someone to remember numbers well, will you help me? (y/n) ")
         if answer_intro == "y" or answer_intro == "yes":
-            print("Great let's talk over the details. I've collected some samples in the geothermal\
- pools 20 clicks north of here. Please go there and return them to me.")
+            print("""
+Great let's talk over the details. I've collected some samples in the geothermal\
+ pools 20 clicks north of here. Please go there and return them to me.""")
             break
         elif answer_intro == "n" or answer_intro == "no":
-            print("No problem, see you around.")
+            print("""
+No problem, see you around.""")
             return
         else:
-            print("Please only tell me, yes(y) or no(n).")
+            print("""
+Please only tell me, yes(y) or no(n).""")
             continue
 
     #level 1
@@ -125,11 +132,13 @@ But let’s come to business, I’ve been sent to this planet on the first recon
             level1_1()
             break
         elif answer_level1 == "n" or answer_level1 == "no":
-            print("You are riding your dirtbike back to the labratory, enjoying the vast landscape,\
- until...")
+            print("""
+You are riding your dirtbike back to the labratory, enjoying the vast landscape,\
+ until...""")
             break
         else:
-             print("Please only tell me, yes(y) or no(n).")
+             print("""
+Please only tell me, yes(y) or no(n).""")
              continue
     
     #level 2
@@ -138,17 +147,21 @@ But let’s come to business, I’ve been sent to this planet on the first recon
  it seems like you're in sewer. You try to navigate your surroundings, until you stumble upon what seems to be a dead body,\
  do you want to inspect or leave the body? (i/l) ")
         if answer_level2 == "i" or answer_level2 == "inspect":
-            print("The body feels cold, as you examine it by touch it seems it's holding a note and torch.")
+            print("""
+The body feels cold, as you examine it by touch it seems it's holding a note and torch.""")
             break
         elif answer_level2 == "l" or answer_level2 == "leave":
-             print("As you back off from the body you stumble and fall down. You try to get up and place your hand on\
+             print("""
+As you back off from the body you stumble and fall down. You try to get up and place your hand on\
  the sidewall. As your hand moves across the wall you notice the wall is full of small indents.\
- After quick examination you conclude it is Braille. Luckily, you took a course once and know how to decipher it.")
+ After quick examination you conclude it is Braille. Luckily, you took a course once and know how to decipher it.""")
              break
         else:
-             print("Please only tell me, inspect(i) or leave(l).")
+             print("""
+Please only tell me, inspect(i) or leave(l).""")
              continue
-    print("""You read:
+    print("""
+You read:
           
 My dear friend, 
 
@@ -161,9 +174,10 @@ Best of luck,
 
 John""")
 
-    counter = 0
-    while counter < 4:
-         print("""You examine the room and notice:
+    counter = set()
+    while len(counter) != 4:
+         print("""
+You examine the room and notice:
                
 tap (1)
 blanket (2)
@@ -172,20 +186,25 @@ drain (4)""")
          
          choice_level2 = input("What do you want to inspect? ")
          if choice_level2 == "1" or choice_level2 == "tap":
-             print("You screw of the valve and notice the number 2 inside.")
-             counter += 1
+             print("""
+You screw of the valve and notice the number 2 inside.""")
+             counter.add("a")
          elif choice_level2 == "2" or choice_level2 == "blanket":
-             print("You have counted 5 braided figures on the blanket.")
-             counter += 1
+             print("""
+You have counted 5 braided figures on the blanket.""")
+             counter.add("b")
          elif choice_level2 == "3" or choice_level2 == "bed":
-             print("The amount of rows on the slatted base are 9.")
-             counter += 1
+             print("""
+The amount of rows on the slatted base are 9.""")
+             counter.add("c")
          elif choice_level2 == "4" or choice_level2 == "drain":
-             print("There are 25 holes in the drain. But you note that the prisoner died next to the drain, maybe\
- it is better to not include this number.")
-             counter += 1
+             print("""
+There are 25 holes in the drain. But you note that the prisoner died next to the drain, maybe\
+ it is better to not include this number.""")
+             counter.add("d")
          else:
-            print("Please enter your choice: tap(1), blanket(2), bed(3), drain(4).")
+            print("""
+Please enter your choice: tap(1), blanket(2), bed(3), drain(4).""")
              
     #enter code
     
@@ -197,12 +216,13 @@ drain (4)""")
     
     while True:
         found_code = input("After 13 days you finally found the code, try to open the lock: ")
-        print(f"{found_code} and {passw}")
         if found_code == passw:
-            print("Correct! You escape from the prison and make your way back to the labratory...")
+            print("""
+Correct! You escape from the prison and make your way back to the labratory...""")
             break
         else:
-            print("Incorrect, try ordering your found number differently.")
+            print("""
+Incorrect, try ordering your found number differently.""")
             continue
 
     #outro
@@ -212,28 +232,36 @@ drain (4)""")
     while True:
         outro_answer = input(f"Wait, I see! {user_name} is that you? Where have you been? Have you retrieved my samples? (y/n) ")
         if outro_answer == "y" or outro_answer == "yes":
-            print("You tell Dr Boweel the story...")
+            print("""
+You tell Dr Boweel the story...""")
             break
         if outro_answer == "n" or outro_answer == "no":
-            print("You tell Dr Boweel the story...")
+            print("""
+You tell Dr Boweel the story...""")
             break
         else:
-            print("Please only tell me, yes(y) or no(n).")
+            print("""
+Please only tell me, yes(y) or no(n).""")
             continue
     
-    print("""Dr Boweel: "No way, you must have been uncovering something. Might be related to the mutated animals." """)
+    print("""
+Dr Boweel: "No way, you must have been uncovering something. Might be related to the mutated animals." """)
     
     while True:
         final_answer = input("""Dr Boweel: "Please tell me, what sample was stuck (x), what was the year the prisoner died (y) and\
  how many days have you been stuck anyway(z)?!" (x,y,z) """)
         if final_answer == "2-1,2345,13":
-            print("""Dr Boweel: "I never placed that sample! I only had two samples. That prisoner died not too long ago." """)
+            print("""
+Dr Boweel: "I never placed that sample! I only had two samples. That prisoner died not too long ago..." """)
             break
         else:
-            print("Please try to remember the numbers! Example to how it should be entered: 4-5,0987,16")
+            print("""
+Please try to remember the numbers! Example to how it should be entered: 4-5,0987,16""")
             continue
 
-    print("Congratulations, you completed the world of Boy.")
+    print("""
+          
+Congratulations, you completed the world of Boy.""")
     global end_count
     end_count += 1
 
