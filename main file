@@ -450,7 +450,7 @@ What name do you give yourself as a janitor? \n\n""")
     print("""
 The big vault door slowly creaks open and a golden light shines through the opening. \
 In the middle of the vault you see a single stand with a vial on it: THE CURE! \
-You take the vial and take it to the laberatory of John. There you are able to \
+You take the vial and take it to the laberatory. There you are able to \
 replicate it and distribute it over planet Earth""")
     
     global end_count
