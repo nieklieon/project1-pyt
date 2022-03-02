@@ -673,9 +673,9 @@ user_name = input("What is your name? ")
 
 print(f"""
 Welcome {user_name}, you are an adventurer on a planet plagued by mutated animals. \
-Your job is to find the cure to the disease causing this and save the world! \
-You can do this by completing all the levels and collecting 4 tokens. \
-Well, let's not wait! Let's start!""")
+Your job is to find the cure to the disease causing this and save the planet! \
+You can do this by helping all people. \
+Well, no time for naps now! Let's start!""")
 
 while len(end_count) != 4:
    print(f"""
@@ -706,6 +706,6 @@ I'm sorry you can't help Niek yet. Help the other people first to gain acces to 
 Please enter your choice: Tessa (1), Boy (2), Roberto (3), Niek (4).""")
 else: 
     print(f"""
-You once again helped everybody in need!""")
+You once again helped everybody in need {user_name}!""")
     print("""
 Thanks for saving the planet and for playing!""")
