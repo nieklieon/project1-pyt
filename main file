@@ -209,15 +209,15 @@ drain (4)""")
          choice_level2 = input("What do you want to inspect? ")
          if choice_level2 == "1" or choice_level2 == "tap":
              print("""
-You screw of the valve and notice the number 2 inside.""")
+You screw of the valve and notice the number 3 inside.""")
              counter.add("a")
          elif choice_level2 == "2" or choice_level2 == "blanket":
              print("""
-You have counted 5 braided figures on the blanket.""")
+You have counted 4 braided figures on the blanket.""")
              counter.add("b")
          elif choice_level2 == "3" or choice_level2 == "bed":
              print("""
-The amount of rows on the slatted base are 9.""")
+The amount of rows on the slatted base are 8.""")
              counter.add("c")
          elif choice_level2 == "4" or choice_level2 == "drain":
              print("""
@@ -232,7 +232,7 @@ Please enter your choice: tap(1), blanket(2), bed(3), drain(4).""")
     
     import random
     
-    code = "952"
+    code = "348"
     temp = random.sample(code, 3)
     passw = "".join(temp)
     
