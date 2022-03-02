@@ -58,6 +58,9 @@ to hack the monitors ") #player chose to hack the baby monitors
             while prime != "7532":
                 print("""
 Oops, that is not right, please try again""")
+                prime = input("Use the first four prime numbers in order from highest to lowest \
+to hack the monitors ") #player chose to hack the baby monitors
+                continue
             print("""
 Congratulations, 7532 was right. The parents are notified to keep their babies safe""")  
             counter.add("g")
@@ -695,7 +698,7 @@ Niek (4)""")
    elif world == "4" or world == "niek" or world == "Niek":
        if len(end_count) != 3:
            print("""
-I'm sorry you can't play this level yet. Complete the other levels to gain acces to the bank.""")
+I'm sorry you can't help Niek yet. Help the other people first to gain acces to the bank.""")
        else:
            world_Niek()
    else:
