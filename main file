@@ -357,7 +357,7 @@ You spot a keypad with 9 numbers.""")
                 # Ask to input code
                 while True:
                     num_input = int(input("What number do you enter? \n\n"))
-                    if num_input == 123:
+                    if num_input == 957:
                         break
                     else:
                         print("'BEEP BEEP'. CODE INCORRECT. PLEASY TRY AGAIN.")
