@@ -685,7 +685,7 @@ Boy (2)
 Roberto (3)
 Niek (4)""")
 
-   world = input("What world do you want to enter? ")
+   world = input("Who do you want to help? ")
    if world == "1" or world == "tessa" or world == "Tessa":
        world_tessa()
    elif world == "2" or world == "boy" or world == "Boy":
