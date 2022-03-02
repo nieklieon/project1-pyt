@@ -88,11 +88,7 @@ You completed this world.""")
 
 
 
-
-
-
-
-
+#__________________________________________________________________________________________________________________________________________________
 
 
 #world Boy
@@ -292,12 +288,7 @@ Congratulations, you completed the world of Boy.""")
   
   
   
-  
-  
-  
-  
-  
-  
+  #----------------------------------------------------------------------------------------------------------------------
   
 
 # World Niek
@@ -463,137 +454,154 @@ replicate it and distribute it over planet Earth""")
 
 
 
-
-
-
-
-
-
-
 #------------------------------------------------------------------------------------------------------------       
 # Roberto_world
+
+#import colorama for fontstyle colors
+from colorama import Fore, Back, Style
 
 ####level1 functions
 #-------------------------------------------------------------------------
 #level 1 intro 
 def level1(username):
-    print(f"-------------------------------------------------------------\
+    print(Fore.MAGENTA + f"-------------------------------------------------------------\
           \nGreat, {username} we appreciate your help!\
           \nto find the three-digit number we need to dive in some data.\
           \nTo get to this data we need to find all 3 documents in the\
           \nlaboratorium, each document contains 1 number of the safe.\
-          \nlet's start by finding the first document!\n")
+          \nlet's start by finding the first document!")
+    print(Style.RESET_ALL)
 
-#level1 start game
+#level 1 start game
 def level1_question(count):
+    #intro quiz level 1
     print("----------------------------------------------------------------\
           \nLEVEL1:\
           \nThe documents are in the laboratorium.\
           \nTo get to the laboratorium we need to have the coordinates of the laboratorium.\
           \nThe coordinates of the laboratorium can be calculated by answering Question 1:")
+    #quiz level 1
     while True:
-        question1 =  int(input("---------------------------------------------\
-                               \nQUESTION1.\
-                               \nWhat is the distance in KM of planet earths (pole to pole) - 39.999km?\
-                               \nPlease enter the coordinate as an integer number: "))
-        if question1 == 9:
+        print(Fore.CYAN + "---------------------------------------------\
+              \nQUESTION1.\
+              \nWhat is the distance in KM of planet earths (pole to pole) - 39.999km?")
+        print(Style.RESET_ALL)
+        question1 =  input("Please enter the coordinate as an integer number: ")
+        #Correct answer
+        if question1 == "9":
             count = 1
-            print(f"---------------------------------------------------------\
+            print(Fore.GREEN + f"---------------------------------------------------------\
                   \nGreat you have found the coordinates.\
                    \nWe are in the laboratorium. The first document contains\
                    \nthe digit number {question1}. So the first digit number of the Safe = {question1}\
                     \nYou have finished level {count}: Let's go on and find the next safe digit number")
+            print(Style.RESET_ALL)
             return count
+        #Wrong answer
         else:
-            print(f"-----------------------------------------------------------\
+            print(Fore.RED + f"-----------------------------------------------------------\
                   \n{question1} is Wrong! To get to the laboratorium we need to have the right\
                   \ncoordinates. Please try Again! ")
-                           
+            print(Style.RESET_ALL)
 #---------------------------------------------------------------------------
 
-####level2 funtions
+####level2 functions
 #-----------------------------------------------------------------------------
 #level 2 intro 
 def level2(username):
-    print(f"-------------------------------------------------------------\
+    print(Back.MAGENTA + f"-------------------------------------------------------------\
           \nGreat, {username} you are in level 2 now!.")
-
-#level2 start game
+    print(Style.RESET_ALL)
+    
+#level 2 start game
 def level2_question(count):
+    #intro quiz level 2
     print("----------------------------------------------------------------\
           \nLEVEL2: to get to the second document we need to pass 1 mutated beast.\
           \nIn the laboratorium building their is a ak47-gun.\
           \nThe ak47 misses a bullet. We need a NATO bullet for the ak47.\
           \nTheir are a lot of bullets on the ground but we need to find the right size of the bullet.")
+    #Quiz level 2
     while True:
-        print("---------------------------------------------\
+        print(Fore.CYAN + "---------------------------------------------\
               \nQUESTION2.\
               \nWhat size of bullet do we need to pick up from the ground?\
                \n(Enter diameter........ in mm:) (enter  long cartridge.....in mm:)")
-        question2_diameter =  float(input("\nPlease enter the Diameter in (float) mm: "))
-        question2_longcartridge = float(input("\nPlease enter the long cartridge in (integer) mm: "))
-        if question2_diameter == 7.62 and question2_longcartridge == 51:
+        print(Style.RESET_ALL)
+        question2_diameter =  input("Please enter the Diameter in (2 decimal float) mm: ")
+        question2_longcartridge = input("Please enter the long cartridge in (integer) mm: ")
+        #Correct answer
+        if question2_diameter == "7.62" and question2_longcartridge == "51":
             count = count + 1
-            print("---------------------------------------------------------\
+            print(Fore.GREEN + "---------------------------------------------------------\
                   \nGreat you have found the right bullet and shot the mutated beasts.\
                    \nWe have the second document and it contains the  second digit number of 5\
                    \nSo the second digit number of the Safe = 5\
                    \nYou have finished level 2: Let's go on and find the next digit number")
+            print(Style.RESET_ALL)
             return count
+        #Wrong answer
         else:
-            print("-----------------------------------------------------------\
+            print(Fore.RED+ "-----------------------------------------------------------\
                   \nWrong! To get to document 2 we need to kill the mutated beast.\
                   \nWe only can kill the mutated beast if we first find the right size bullet.\
                   \nPlease try Again!")
-                           
+            print(Style.RESET_ALL)
 
 #---------------------------------------------------------------------------
 ####level3 functions
 #----------------------------------------------------------------------------
 #level 3 intro
 def level3(username):
-    print(f"-------------------------------------------------------------\
+    print(Back.MAGENTA + f"-------------------------------------------------------------\
           \nGreat, {username} you are in level 3 now!.")
-
-#level3 start game
+    print(Style.RESET_ALL)
+    
+#level 3 start game
 def level3_question(count):
+    #intro quiz level 3 
     print("----------------------------------------------------------------\
-         \nLevel3: We need to hurry up, outside the building are a lot of mutated beast\
+         \nLevel3: We need to hurry up, outside the building are a lot of mutated beasts\
           \nwho are trying to get into the laboratium. we need to find the third document before\
            \nthey get in. The laboratorium has a self destruction mechanism,\
             \nif we dont make it out here in time, we need the laboratorium to self destruct\
             \nso that the mutated beasts get killed too.  we need to set a time for the\
             \nselfdestruction mechanism. to know the exact time in minutes we need to calculate how \
             \nmuch minutes it takes for us to find the document and get out here alive..")
+    #Quiz level 3
     while True:
-        print("---------------------------------------------\
+        print(Fore.CYAN + "---------------------------------------------\
               \nQUESTION3.\
               \nwhat is 25 hours in minutes? 25 hours = ......... min.")
-        question3_minutes =  float(input("Please enter the minutes:  "))
-        if question3_minutes == 1500:
+        print(Style.RESET_ALL)
+        question3_minutes =  input("Please enter the minutes:  ")
+        #Correct answer
+        if question3_minutes == "1500":
             count = count + 1
-            print("---------------------------------------------------------\
+            print(Fore.GREEN + "---------------------------------------------------------\
                   \nGreat you made it out the laboratorium in time.\
                 \nYou have set the seldestruction mechanish, in the same room you found document 3 \
                 \nwhich contains the third digit number of the safe.\
                 \nthe third digit number of the Safe = 7")
+            print(Style.RESET_ALL)
             return count
+        #Wrong answer
         else:
-            print("-----------------------------------------------------------\
-                  \nWrong! To get to document 3 we need to the exact time in minutes.\
+            print(Fore.RED+ "-----------------------------------------------------------\
+                  \nWrong! To get to document 3 we need the exact time in minutes.\
                   \nPlease try Again!")
+            print(Style.RESET_ALL)
                            
 
 #-----------------------------------------------------------------------------
 
-####MAIN GAME
-
+####MAIN GAME Roberto_world
 def roberto_world(user_name):
     #count is equal to the level a person has achieved
     count = 0
     #MAIN INTRO
     username = user_name
-    print(f"Welcome {username}, you are in the world of Roberto!\
+    print(f"\nWelcome {username}, you are in the world of Roberto!\
           \nCurrently, there are mutated beasts that are endangering the world!\
           \nThe beasts have already killed a lot of people and caused damage.\
           \nWe must take out these beasts as a matter of urgency.\
@@ -603,59 +611,60 @@ def roberto_world(user_name):
           \ncombination lock of the safe in the next world! ")
     #MAIN start game 
     while count<3:
+        print(Fore.MAGENTA + f"\nYou have {count} of the 3 digit numbers!" + Style.RESET_ALL)
         # aks user if he/she wants to play the game
-        start_game = input(f"You have {count} of the 3 digit numbers!\
-               \nDo you want to continue and help find all the Three-digit combinations of the safe?\
+        start_game = input("Do you want to continue and help find all the Three-digit combinations of the safe?\
                 \nSo that we can defeat the mutated beasts and save the world.\
                 \nPlease enter (y/n): ")
         #stop game
         if start_game == "n" or start_game == "N":
-            print(f"\nToo bad, we had hoped that you could help defeat the mutated beasts.\
+            print(Fore.RED + f"\nToo bad, we had hoped that you could help defeat the mutated beasts.\
                  \nBe careful and who knows, we might see each other again soon!\
                 \nBye {username}.!")
+            print(Style.RESET_ALL)
             break
-            #play game
+        #play game
         elif start_game == "y" or start_game == "Y":
             # look at what level the person is by looking at the count
             #level1
             if count == 0:       
                 #level 1 intro
                 level1(username)
-                #level 1 start quiz
+                #level 1 start game
                 count = level1_question(count)
                 continue
             #level2
             elif count == 1:
                 #level 2 intro
                 level2(username)
-                #level 2 start quiz
+                #level 2 start game
                 count = level2_question(count)
                 continue
-            elif count ==2:
+            #level3
+            elif count == 2:
                 #level 3 intro
                 level3(username)
-                #level 3 start quiz
+                #level 3 start game
                 count = level3_question(count)
+        #made a type error
         else:
-            print("I dont understand what you are trying to say?")
-    
+            print(Fore.MAGENTA + "I dont understand what you are trying to say?")
+            print(Style.RESET_ALL)
+    #MAIN OUTRO End game       
     if count == 3:
-        print("\nCongratulations you have completed this world and found all three digit numbers of the safe (9,5,7)!")
-        global end_count
-        end_count.add("r")
+        #Completed world
+        print(Back.GREEN+ "\nCongratulations you have completed this world and found all three digit numbers of the safe 9,5,7!")
+        print(Style.RESET_ALL)
     else:
-        print("You did not complete this world!")
+        #Not completed world
+        print(Back.RED + "You did not complete this world!")
+        print(Style.RESET_ALL)
+        
 
+  ###-------------------------------------------------------------------------------------------        
 
-
-
-
-
-
-
-
-          
-#main menu
+################################################################################################################################       
+#### MAIN MENU #################################################################################################################
 
 user_name = input("What is your name? ")
 
